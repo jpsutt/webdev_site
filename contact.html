@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/Bootstrap-Cosmo-style.css">
+    <link rel="stylesheet" href="style/style.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/additional-methods.min.js"></script>
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container col-lg-12">
+        <div class="row col-lg-12" id="Navbar">
+            <div class="bs-component">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <img class="img-responsive" src="images/logo.png" alt="Logo" width="65" style="padding-right: 1em;">
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="updates.html">Updates</a></li>
+                                <li><a href="location.html">Location</a></li>
+                                <li class="active"><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                            <form class="navbar-form navbar-right" role="search" >
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <center><h2>Sign Up</h2></center>
+            <hr>
+            <div class="col-lg-3 col-xs-0"></div>
+            <div class="col-lg-6 col-xs-12">
+                <form id="cater-form" method="POST" action="">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label" for="first-name">First Name:</label>
+                            <input class="form-control" id="first-name" name="first-name" type="text" minlength="2" maxlength="18" placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="last-name">Last Name:</label>
+                            <input class="form-control" id="last-name" name="last-name" type="text" minlength="2" maxlength="18" placeholder="Smith">
+                        </div>
+                        <div class="form-group required">
+                            <label class="control-label" for="user-id"><span class="glyphicon glyphicon-user"></span> User ID:</label>
+                            <input class="form-control" id="user-id" name="user-id" type="text" minlength="2" maxlength="18" placeholder="JSmith25" required>
+                        </div>
+                        <div class="form-group required">
+                            <label class="control-label" for="password"><span class="glyphicon glyphicon-lock"></span> Password:</label>
+                            <input class="form-control" id="password" name="password" type="password" minlength="5" maxlength="18" required>
+                        </div>
+                        <div class="form-group required">
+                            <label class="control-label" for="confirm_password"><span class="glyphicon glyphicon-lock"></span> Confirm Password:</label>
+                            <input class="form-control" id="confirm_password" name="confirm_password" type="password" minlength="5" maxlength="18" equalTo="#password" required>
+                        </div>
+                        <div class="form-group required">
+                            <label class="control-label" for="email"><span class="glyphicon glyphicon-envelope"></span> Email:</label>
+                            <input class="form-control" id="email" name="email" type="email" placeholder="john.smith@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="email">Supportive Services:</label>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="Checkbox" value="1"> Donate
+                                </label>
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="Checkbox" value="2"> Volunteer
+                                </label>
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="Checkbox" value="3"> Fundraising
+                                </label>
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="Checkbox" value="4"> Campaign
+                                </label>
+                            </div>
+                        </div>
+                        <div class="areas">
+                            <p><span style="color: red">*</span> Indicates required field.</p>
+                        </div>
+                        <br>
+                        <div class="form-group areas text-center">
+                            <input class="btn-lg btn-primary" id="btn-submit" type="submit" value="Submit">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-lg-3 col-xs-0"></div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div id="Footer" class="col-lg-12">
+                <div class="col-lg-2">
+                    <h3>
+                        Multi Studios<br>
+                        123 E. Fake St.<br>
+                        Fauxtown GH 01234
+                    </h3>
+                </div>
+                <div class="col-lg-7"></div>
+                <div class="col-lg-3">
+                    <h3 class="right">
+                        <br>
+                        &copy; 2017 Multi Studios
+                    </h3>
+                </div>
+            </div>
+    </div>
+
+
+    </div>
+    <script type="text/javascript">
+        $("#btn-submit").on('click', function () {
+            $("#cater-form").validate({
+                messages: {
+                    confirm_password: {
+                        equalTo: "Passwords must match."
+                    }
+                }
+            });
+        })
+    </script>
+</body>
+
+<script src="scripts/JQuery.js"></script>
+</html>

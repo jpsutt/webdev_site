@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/Bootstrap-Cosmo-style.css">
+    <link rel="stylesheet" href="style/style.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container col-lg-12">
+        <div class="row col-lg-12" id="Navbar">
+            <div class="bs-component">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <img class="img-responsive" src="images/logo.png" alt="Logo" width="65" style="padding-right: 1em;">
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="updates.html">Updates</a></li>
+                                <li class="active"><a href="location.html">Location</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                            <form class="navbar-form navbar-right" role="search" >
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row col-lg-12 text-center">
+            <h2>Location</h2>
+            <div id="map"></div>
+            <br>
+            <button type="button" class="btn btn-lg map-option" data-id="roadmap">Roadmap View</button>
+            <button type="button" class="btn btn-lg map-option" data-id="terrain">Terrain View</button>
+            <button type="button" class="btn btn-lg map-option" data-id="satellite">Satellite View</button>
+            <button type="button" class="btn btn-lg map-option" data-id="hybrid">Hybrid View</button>
+
+            <hr class="my-4">
+        </div>
+
+        <div class="row col-lg-12">
+            <div id="Footer" class="col-lg-12">
+                <div class="col-lg-2">
+                    <h3>
+                        Multi Studios<br>
+                        123 E. Fake St.<br>
+                        Fauxtown GH 01234
+                    </h3>
+                </div>
+                <div class="col-lg-7"></div>
+                <div class="col-lg-3">
+                    <h3 class="right">
+                        <br>
+                        &copy; 2017 Multi Studios
+                    </h3>
+                </div>
+            </div>
+    </div>
+
+
+    </div>
+</body>
+<script type="text/javascript">
+    //Map Variable
+    var map;
+    //Map Init Function
+    function map() {
+        var pos = {lat: 41.886611, lng: -87.617086};
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: pos
+        });
+        var marker = new google.maps.Marker({
+            icon: 'images/logo-small.png',
+            title: 'Multi Studios Headquarters',
+            position: pos,
+            map: map
+        })
+        var safeLatLng = [
+            {lat: 41.862824, lng: -87.617080},
+            {lat: 41.862874, lng: -87.616393},
+            {lat: 41.861766, lng: -87.616268},
+            {lat: 41.861728, lng: -87.616970}
+        ];
+        var safeArea = new google.maps.Polygon({
+            paths: safeLatLng,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });
+        safeArea.setMap(map);
+        var safePolyLatLng = [
+            {lat: 41.886550, lng: -87.617276},
+            {lat: 41.884401, lng:  -87.617610},
+            {lat: 41.884321, lng: -87.620655},
+            {lat: 41.867546, lng: -87.620427},
+            {lat: 41.862017, lng: -87.618399},
+            {lat: 41.862265, lng: -87.616693}
+        ];
+        var safePoly = new google.maps.Polyline({
+            path: safePolyLatLng,
+            geodesic: true,
+            strokeColor: '#FF0000',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        });
+        safePoly.setMap(map);
+    }
+
+    $(document).ready( function() {
+        //Button click funciton
+        $('.map-option').on('click', function() {
+            map.setMapTypeId($(this).data("id"));
+        })
+    });
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-WX8zcztV4jGQjpHnQfCZpPY55oYLDtQ&callback=map">
+</script>
+<script src="scripts/JQuery.js"></script>
+</html>
